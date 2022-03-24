@@ -11,16 +11,15 @@ require('./database');
 
 //setting
 app.set('port',process.env.PORT || 3000);
-app.set('views',path.join(__dirname,'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs',engine({
     defaultLayout:'main',
     layoutsDir:path.join(app.get('views'),'layouts'),
     partialsDir:path.join(app.get('views'),'partials'),
     extname:'.hbs'
-    
 }));
 
-app.set('views engine','.hbs');
+app.set('view engine','.hbs');
 
 //middelewares
 app.use(express.urlencoded({extended:false}));
